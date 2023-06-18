@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-size: 24px;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -25,7 +25,8 @@ header {
   align-items: center;
   gap: 16px;
   height: 80px;
-  background-color: #6d6767;
+  background-color: #20232a;
+  font-size: 20px;
 }
 
 footer {
@@ -33,7 +34,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 80px;
-  background-color: #6d6767;
+  background-color: #20232a;
 }
 
 main {
@@ -46,4 +47,8 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.active {
+  color: #61dafb;
 }
