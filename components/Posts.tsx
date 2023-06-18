@@ -1,21 +1,13 @@
 'use client';
 
-import { usePosts } from '@/store';
+import { getAllPosts } from '@/services/getPosts';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
-import { shallow } from 'zustand/shallow';
+import useSWR from 'swr';
 
 const Posts = () => {
-  const [posts, loading, getAllPosts] = usePosts(
-    (state) => [state.posts, state.loading, state.getAllPosts],
-    shallow
-  );
+  const { data: posts, isLoading } = useSWR('posts', getAllPosts);
 
-  useEffect(() => {
-    getAllPosts();
-  }, [getAllPosts]);
-
-  return loading ? (
+  return isLoading ? (
     <h3>Loading...</h3>
   ) : (
     <ul>
